@@ -24,8 +24,12 @@ let timeCount = 0;
 const currentImg = localStorage.currentImg;
 
 setTimeout(() => {
-  imgBlock.style.backgroundImage = `${currentImg}`;
   imgBlock.style.display = 'block';
+  if(currentImg !== undefined){
+    imgBlock.style.backgroundImage = `${currentImg}`;
+  }else{
+    imgBlock.style.backgroundImage = imgArr[0].url
+  }
 }, 1200);
 
 // get random number for array with img
